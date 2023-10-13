@@ -4,7 +4,7 @@ services:
     container_name: next-ts-app
     build:
       context: ./
-      dockerfile: dev.Dockerfile
+      dockerfile: dev.DockerFile
     environment:
       NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY : .env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
       CLERK_SECRET_KEY : .env.CLERK_SECRET_KEY
