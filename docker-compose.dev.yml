@@ -6,13 +6,13 @@ services:
       context: ./
       dockerfile: dev.Dockerfile
     environment:
-      ENV_VARIABLE: ${ENV_VARIABLE}
-      NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
-      POSTGRES_HOST: ${POSTGRES_HOST}
-      POSTGRES_PORT: ${POSTGRES_PORT}
-      POSTGRES_DATABASE: ${POSTGRES_DATABASE}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY : "example-demo"
+      CLERK_SECRET_KEY : "example-demo"
+      NEXT_PUBLIC_CLERK_SIGN_IN_URL : /sign-in
+      NEXT_PUBLIC_CLERK_SIGN_UP_URL : /sign-up
+      NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL : /
+      NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL : /
+      
     volumes:
       - ./next-ts-app/app:/app/app
       - ./next-ts-app/public:/app/public
