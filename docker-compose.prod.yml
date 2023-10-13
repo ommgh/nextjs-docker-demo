@@ -1,0 +1,25 @@
+# `version` is now deprecated
+# https://docs.docker.com/compose/compose-file/#version-top-level-element
+
+services:
+  docker-next:
+    container_name: next-ts-app
+    build:
+      context: ./
+      dockerfile: prod.Dockerfile
+      args:
+        ENV_VARIABLE: ${ENV_VARIABLE}
+        NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+        POSTGRES_HOST: ${POSTGRES_HOST}
+        POSTGRES_PORT: ${POSTGRES_PORT}
+        POSTGRES_DATABASE: ${POSTGRES_DATABASE}
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    restart: always
+    networks:
+      - my_network
+  # More containers can be added below
+
+networks:
+  my_network:
+    external: true

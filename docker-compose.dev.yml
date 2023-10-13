@@ -1,0 +1,27 @@
+
+services:
+  next-ts-app:
+    container_name: next-ts-app
+    build:
+      context: ./
+      dockerfile: dev.Dockerfile
+    environment:
+      ENV_VARIABLE: ${ENV_VARIABLE}
+      NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DATABASE: ${POSTGRES_DATABASE}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./next-ts-app/app:/app/app
+      - ./next-ts-app/public:/app/public
+    restart: always
+    networks:
+      - my_network
+
+  # Add more containers below
+
+networks:
+  my_network:
+    external: true
