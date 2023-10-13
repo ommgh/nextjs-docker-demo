@@ -18,4 +18,4 @@ Run your production environment:
 ./prod.sh
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) or [https://local.mproske.com](https://local.mproske.com).
+Visit [http://localhost:3000](http://localhost:3000)
