@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-WORKDIR /app
+WORKDIR /apps
 
 
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
@@ -17,7 +17,7 @@ COPY next.config.js .
 COPY tsconfig.json .
 COPY tailwind.config.ts .
 
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
 CMD \
   if [ -f yarn.lock ]; then yarn dev; \

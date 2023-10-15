@@ -6,19 +6,17 @@ services:
       context: ./
       dockerfile: dev.DockerFile
     environment:
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY : .env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-      CLERK_SECRET_KEY : .env.CLERK_SECRET_KEY
-      NEXT_PUBLIC_CLERK_SIGN_IN_URL : .env.NEXT_PUBLIC_CLERK_SIGN_IN_URL
-      NEXT_PUBLIC_CLERK_SIGN_UP_URL : .env.NEXT_PUBLIC_CLERK_SIGN_UP_URL
-      NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL : .env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL
-      NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL : .env.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL
-      
-    volumes:
-      - ./next-ts-app/app:/app/app
-      - ./next-ts-app/public:/app/public
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY : pk_test_c2tpbGxlZC1rb2FsYS04Ny5jbGVyay5hY2NvdW50cy5kZXYk
+      CLERK_SECRET_KEY : sk_test_wR597OVqDaOERxy7Nu7pzyBI8vwUXYKCcmqfoyTLn8
+      NEXT_PUBLIC_CLERK_SIGN_IN_URL : /sign-in
+      NEXT_PUBLIC_CLERK_SIGN_UP_URL : /sign-up
+      NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL : /
+      NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL : /
     restart: always
     networks:
       - my_network
+    ports:
+      - 3000:3000
 
   # Add more containers below
 
