@@ -14,8 +14,12 @@ RUN \
 COPY app ./app
 COPY public ./public
 COPY next.config.js .
+COPY package.json .
 COPY tsconfig.json .
 COPY tailwind.config.ts .
+COPY middleware.ts .
+COPY next-env.d.ts .
+
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
